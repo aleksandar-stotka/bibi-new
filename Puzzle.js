@@ -14,6 +14,9 @@
     function isMiniature() {
       return location.pathname.includes('/fullcpgrid/');
     }
+    // This function checks whether the current URL path contains the string /fullcpgrid/.
+
+
     //-----------------------------------------------------------------------------
 
     function alea(min, max) {
@@ -22,7 +25,9 @@
       if (typeof max == 'undefined') return min * mrandom();
       return min + (max - min) * mrandom();
     }
+    // If you provide two values, like alea(5, 15), it gives a random number between 5 and 15.
 
+``
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     function intAlea(min, max) {
@@ -102,7 +107,7 @@
         // this.scaledPoints will be added when we know the scale
       } // Side
 
-      //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      //- - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - -
 
       //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       reversed() {
@@ -1152,7 +1157,7 @@
     } //  // scope for loadFile
 
     function loadInitialFile() {
-      puzzle.srcImage.src = "https://assets.codepen.io/2574552/Mona_Lisa.jpg";
+      puzzle.srcImage.src = "https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg ";
     }
     //-----------------------------------------------------------------------------
     function imageLoaded(puzzle) {
