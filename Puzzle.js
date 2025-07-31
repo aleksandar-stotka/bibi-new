@@ -17,6 +17,17 @@
     // This function checks whether the current URL path contains the string /fullcpgrid/.
 
 
+  setTimeout(() => {
+    const welcome = document.getElementById("welcome-message");
+    welcome.classList.add("fade-out");
+
+    // Remove from DOM after fade-out
+    setTimeout(() => {
+      welcome.remove();
+    }, 1000); // matches CSS transition
+  }, 3000);
+
+
     //-----------------------------------------------------------------------------
 
     function alea(min, max) {

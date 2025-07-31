@@ -1,80 +1,173 @@
-  <div id=forPuzzle></div>
-  <ul id="menu">
-    <li>&#x2630;</li>
-    <li>default image</li>
-    <li>load image</li>
-    <li>shape: <select id="shape">
-        <option value="1" selected>classic</option>
-        <option value="2">triangle</option>
-        <option value="3">round</option>
-        <option value="4">straight</option>
-      </select></li>
-    <li>12 pieces</li>
-    <li>25 pieces</li>
-    <li>50 pieces</li>
-    <li>100 pieces</li>
-    <li>200 pieces</li>
-  </ul>
+<div id="forPuzzle"></div>
 
-  <script src="Puzzle.js"></script>
-  <style>
-     body {
-      font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
-      border-width: 0;
-      cursor: pointer;
+<!-- Responsive Top Navbar -->
+<ul id="menu">
+  <li class="menu-icon">&#x2630;</li>
+  <li>Default Image</li>
+  <li>Load Image</li>
+  <li>
+    Shape:
+    <select id="shape">
+      <option value="1" selected>Classic</option>
+      <option value="2">Triangle</option>
+      <option value="3">Round</option>
+      <option value="4">Straight</option>
+    </select>
+  </li>
+  <li>12 Pieces</li>
+  <li>25 Pieces</li>
+  <li>50 Pieces</li>
+  <li>100 Pieces</li>
+  <li>200 Pieces</li>
+</ul>
+<div id="welcome-message">Welcome to Bibi Puzzle</div>
+
+
+<script src="Puzzle.js"></script>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fefefe;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  /* Top navbar */
+  #menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #004d7a;
+    color: white;
+    z-index: 1000;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu li {
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #0074b7;
+    font-size: 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  #menu li:hover {
+    background-color: #3399ff;
+    transform: scale(1.05);
+  }
+
+  #menu select {
+    margin-left: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 4px;
+    border: none;
+  }
+
+  /* Puzzle area - centered behind navbar */
+  #forPuzzle {
+    position: absolute;
+    width: 95vw;
+    height: 92vh;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffce0;
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 8px;
+    border: 2px solid #eee;
+  }
+
+  .polypiece {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .moving {
+    transition: top 1s linear, left 1s linear;
+  }
+
+  .gameCanvas {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+  }
+/* Fullscreen Welcome */
+#welcome-message {
+  position: fixed;
+  inset: 0;
+  background-color: #004d7a;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Fade-out effect */
+#welcome-message.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
     }
 
     #menu {
-      position: relative;
-      list-style-type: none;
-      padding-left: 5px;
-      z-index: 1000;
-      /* 1 */
-      display: inline-block;
-      text-align: center;
+      flex-direction: column;
+      align-items: center;
     }
 
     #menu li {
-      margin: 2px;
-      padding: 4px 10px;
-      border-radius: 5px;
-      background-color: #ffff80;
-    }
-
-    #menu li:hover {
-      background-color: #ffDD60;
+      width: 90%;
+      text-align: center;
     }
 
     #forPuzzle {
-      position: absolute;
-      width: 95vw;
-      height: 95vh;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #ffffdd;
-      overflow: hidden;
+      width: 98vw;
+      height: 90vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 13px;
     }
 
-    .polypiece {
-      display: block;
-      overflow: hidden;
-      position: absolute;
+    #menu li {
+      padding: 0.5rem;
     }
 
-    .moving {
-      transition-property: top, left;
-      transition-duration: 1s;
-      transition-timing-function: linear;
+    #forPuzzle {
+      width: 100vw;
+      height: 88vh;
     }
-
-    .gameCanvas {
-      display: none;
-      overflow: hidden;
-      position: absolute;
-    }
-
-  </style>
+  }
+</style>
