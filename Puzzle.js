@@ -1170,6 +1170,8 @@
     function loadInitialFile() {
       puzzle.srcImage.src = "https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg ";
     }
+    
+
     //-----------------------------------------------------------------------------
     function imageLoaded(puzzle) {
       events.push({ event: "srcImageLoaded" });
