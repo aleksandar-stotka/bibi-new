@@ -1167,10 +1167,25 @@
       } // loadFile
     } //  // scope for loadFile
 
-    function loadInitialFile() {
-      puzzle.srcImage.src = "https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg ";
-    }
-    
+ 
+  function loadInitialFile(imageUrl) {
+    puzzle.srcImage.src = imageUrl;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const imageGrid = document.getElementById("imageGrid");
+    const images = imageGrid.querySelectorAll("img");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        // Load clicked image into puzzle
+        loadInitialFile(img.src);
+
+        // Hide the entire image grid
+        imageGrid.style.display = "none";
+      });
+    });
+  });
 
     //-----------------------------------------------------------------------------
     function imageLoaded(puzzle) {
@@ -1475,7 +1490,6 @@
     });
 
     puzzle = new Puzzle({ container: "forPuzzle" });
-    autoStart = isMiniature(); // used for nice miniature in CodePen
 
     loadInitialFile();
     requestAnimationFrame(animate);

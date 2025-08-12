@@ -3,7 +3,19 @@
 <!-- Responsive Top Navbar -->
 <ul id="menu">
   <li class="menu-icon">&#x2630;</li>
-  <li>Default Image</li>
+<div id="imageGrid">
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+  <img src="https://images.sbs.com.au/drupal/yourlanguage/public/bibi4-rez.jpg" alt="Puzzle 1" />
+ 
+</div>
   <li>Load Image</li>
   <li>
     Shape:
@@ -38,6 +50,28 @@
     font-size: 16px;
     overflow-x: hidden;
   }
+  #imageGrid {
+  margin-top: 70px; /* space below navbar */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px;
+  background: #f0f0f0;
+}
+
+#imageGrid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#imageGrid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 
   /* Top navbar */
   #menu {
