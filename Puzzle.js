@@ -27,33 +27,7 @@
     }, 1000); // matches CSS transition
   }, 3000);
       // element to exit auit of box
-      function keepInsideBox(piece, container) {
-  const box = container.getBoundingClientRect();
-  const el = piece.getBoundingClientRect();
-
-  let newLeft = piece.offsetLeft;
-  let newTop = piece.offsetTop;
-
-  // Prevent going left
-  if (el.left < box.left) {
-    newLeft = 0;
-  }
-  // Prevent going top
-  if (el.top < box.top) {
-    newTop = 0;
-  }
-  // Prevent going right
-  if (el.right > box.right) {
-    newLeft = box.width - el.width;
-  }
-  // Prevent going bottom
-  if (el.bottom > box.bottom) {
-    newTop = box.height - el.height;
-  }
-
-  piece.style.left = newLeft + "px";
-  piece.style.top = newTop + "px";
-}
+      
 
 // Example usage: call after moving a piece
 document.querySelectorAll(".polypiece").forEach(piece => {
